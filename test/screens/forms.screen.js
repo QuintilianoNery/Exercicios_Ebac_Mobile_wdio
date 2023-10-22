@@ -1,12 +1,12 @@
-class FormsScreen {
-    get formsButton() {
-        return $('~Forms');
-    }
+// class FormsScreen {
+//     get formsButton() {
+//         return $('~Forms');
+//     }
     
-    async goToForms() {
-        this.formsButton.click();
-    }
-}
+//     async goToForms() {
+//         this.formsButton.click();
+//     }
+// }
 
 
-export default new FormsScreen();
+// export default new FormsScreen();
