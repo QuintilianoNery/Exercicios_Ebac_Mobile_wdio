@@ -1,19 +1,18 @@
 class FormsScreen {
     get textInputFieldForms (){
-        return $('android=new UiSelector().text("Input field:")')
+        return $('~text-input')
     }
     
     get textField() {
         return $('~text-input')
     }
-    
-    // --
+
     async isVisibleField(){
         this.textInputFieldForms.waitForExist({timeout: 2000})
     }
 
     async fillOutForm() {
-        this.textField.setValue('Teste')
+        this.textField.setValue()
         expect (await this.textField).toBeDisplayed()
     }
 }

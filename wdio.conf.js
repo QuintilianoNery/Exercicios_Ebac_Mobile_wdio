@@ -8,7 +8,8 @@ exports.config = {
     specs: ['./test/specs/**/*.js'],
     framework: 'mocha',
     waitforTimeout: 10000,
-    maxInstances: 1,
+    maxInstances: 10,
+    reporters: ['spec'],
     capabilities: [
         {
             deviceName: "samsung-galaxy-s20",
