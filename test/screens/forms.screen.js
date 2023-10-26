@@ -5,23 +5,23 @@ class FormsScreen {
     }
 
     get inputTextresult() {
-        return $('~input-text-result')
+        return $('//android.widget.TextView[@content-desc="input-text-result"]')
     }
 
     get clickSwitch() {
-        return $('~switch')
+        return $('//android.widget.Switch[@content-desc="switch"]')
     }
 
     get clickDropdown() {
-        return $('id:android_touchable_wrapper')
+        return $('//android.view.ViewGroup[@content-desc="Dropdown"]')
     }
 
     get selectOption() {
-        return $('android=Appium is awesome')
+        return $('android=new UiSelector().textContains("Appium is awesome")')
     }
 
     get clickButton() {
-        return $('~button-Active')
+        return $('android=new UiSelector().textContains("Active")')
     }
     async isVisibleField() {
         this.textField.waitForExist({ timeout: 2000 })
@@ -47,14 +47,15 @@ class FormsScreen {
 
     async clickInOption() {
         this.selectOption.click()
-        // const text = await selectOption.getText();
-        // expect(text).to.equal('Appium is awesome')
+        const text = await selectOption.getText();
+        expect(text).to.equal('Appium is awesome')
     }
 
 
-    // async getInputText(){
-    //     return await this.inputTextresult.getText();
-    // }
+    async getInputText() {
+        this.inputTextresult.getText().toEqual(texto)
+        expect(await this.inputTextresult.toEqual(texto))
+    }
 }
 
 module.exports = new FormsScreen();

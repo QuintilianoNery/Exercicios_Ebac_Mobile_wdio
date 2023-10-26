@@ -7,7 +7,7 @@ exports.config = {
     path: '/wd/hub',
     specs: ['./test/specs/**/*.js'],
     framework: 'mocha',
-    waitforTimeout: 10000,
+    waitforTimeout: 5000,
     maxInstances: 10,
     reporters: ['spec'],
     capabilities: [
